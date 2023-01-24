@@ -10,7 +10,6 @@ int main() {
     if (p == NULL) {
         return 1;
     }
-    
     if (system("pmset -g batt | grep -q AC") == 0) {
         while (fgets(buf, 4, p) != NULL) {
             if (atoi(buf) >= 100) {
@@ -27,7 +26,6 @@ int main() {
     }
     
     pclose(p);
-    sleep(10);
     
     return 0;
 }
